@@ -40,28 +40,22 @@ $css='acceuil';
     </section>
 
 
-    <section class="categories container mt-5">
-        <div class="row text-center">
-            <div class="col-md-3">
-                <a href="#" class="category-card">
+    <section class="categories container mt-3">
+        <div class="row text-center justify-content-center">
+            <div class="col-md-4">
+                <a href="/Sejour" class="category-card">
                     <img src="/assets/images/image/sejours.jpg" alt="Séjours">
                     <h3>Séjours</h3>
                 </a>
             </div>
-            <div class="col-md-3">
-                <a href="#" class="category-card">
+            <div class="col-md-4">
+                <a href="/Circuits" class="category-card">
                     <img src="/assets/images/image/circuits.jpg" alt="Circuits">
                     <h3>Circuits</h3>
                 </a>
             </div>
-            <div class="col-md-3">
-                <a href="#" class="category-card">
-                    <img src="/assets/images/image/vols.jpg" alt="Vols">
-                    <h3>Vols</h3>
-                </a>
-            </div>
-            <div class="col-md-3">
-                <a href="#" class="category-card">
+            <div class="col-md-4">
+                <a href="/Croisiere" class="category-card">
                     <img src="/assets/images/image/croisiere.jpg" alt="Croisières">
                     <h3>Croisières</h3>
                 </a>
