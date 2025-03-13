@@ -44,25 +44,25 @@ $css='acceuil';
         <div class="row text-center">
             <div class="col-md-3">
                 <a href="#" class="category-card">
-                    <img src="images/sejour.jpg" alt="Séjours">
+                    <img src="/assets/images/image/sejours.jpg" alt="Séjours">
                     <h3>Séjours</h3>
                 </a>
             </div>
             <div class="col-md-3">
                 <a href="#" class="category-card">
-                    <img src="images/circuit.jpg" alt="Circuits">
+                    <img src="/assets/images/image/circuits.jpg" alt="Circuits">
                     <h3>Circuits</h3>
                 </a>
             </div>
             <div class="col-md-3">
                 <a href="#" class="category-card">
-                    <img src="images/vols.jpg" alt="Vols">
+                    <img src="/assets/images/image/vols.jpg" alt="Vols">
                     <h3>Vols</h3>
                 </a>
             </div>
             <div class="col-md-3">
                 <a href="#" class="category-card">
-                    <img src="images/croisiere.jpg" alt="Croisières">
+                    <img src="/assets/images/image/croisiere.jpg" alt="Croisières">
                     <h3>Croisières</h3>
                 </a>
             </div>
