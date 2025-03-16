@@ -13,6 +13,7 @@ services:
       - mongo
     volumes:
       - .:/var/www/html  # Montre le dossier local dans le conteneur
+      - ./php.ini:/usr/local/etc/php/php.ini # ajout pour le traitement taille des images
     networks:
       - app-network
 
