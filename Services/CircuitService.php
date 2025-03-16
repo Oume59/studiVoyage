@@ -2,26 +2,33 @@
 
 namespace App\Services;
 
-use App\Models\CircuitModel;
 use App\Repository\CircuitRepository;
 
 class CircuitService
 {
+    private static $instance = null;
     private $circuitRepository;
 
-    public function __construct()
+    private function __construct()
     {
-        $this->circuitRepository = new CircuitRepository(); // INITIALISATION DU REPOSITORY DES CIRCUITS
+        $this->circuitRepository = new CircuitRepository();
     }
 
-    public function addCircuit(array $data, array $files) // AJOUTE UN NOUVEAU CIRCUIT DANS LA BDD
+    public static function getInstance()
+    {
+        if (self::$instance === null) {
+            self::$instance = new CircuitService();
+        }
+        return self::$instance;
+    }
+
+    public function addCircuit(array $data, array $files)
     {
         $imageName = $this->handleImageUpload($files);
         if (!$imageName) {
             return ["status" => "error", "message" => "Erreur lors du téléchargement de l'image."];
         }
 
-        $circuitModel = new CircuitModel();
         $circuitData = [
             'pays' => htmlspecialchars($data['pays'] ?? ''),
             'ville' => htmlspecialchars($data['ville'] ?? ''),
@@ -31,13 +38,12 @@ class CircuitService
             'duree' => intval($data['duree'] ?? 0)
         ];
 
-        $circuitModel->hydrate($circuitData);
         return $this->circuitRepository->create($circuitData)
             ? ["status" => "success", "message" => "Circuit ajouté avec succès", "redirect" => "/Dashboard/index"]
             : ["status" => "error", "message" => "Erreur lors de l'ajout du circuit"];
     }
 
-    public function updateCircuit(int $id, array $data, array $files) // MAJ UN CIRCUIT EXISTANT
+    public function updateCircuit(int $id, array $data, array $files)
     {
         $circuit = $this->circuitRepository->find($id);
         if (!$circuit) {
@@ -46,7 +52,6 @@ class CircuitService
 
         $imageName = !empty($files['img']['tmp_name']) ? $this->handleImageUpload($files, $circuit->img) : $circuit->img;
 
-        $circuitModel = new CircuitModel();
         $updateData = [
             'pays' => htmlspecialchars($data['pays'] ?? ''),
             'ville' => htmlspecialchars($data['ville'] ?? ''),
@@ -56,13 +61,12 @@ class CircuitService
             'duree' => intval($data['duree'] ?? 0)
         ];
 
-        $circuitModel->hydrate($updateData);
         return $this->circuitRepository->update($id, $updateData)
             ? ["status" => "success", "message" => "Circuit mis à jour", "redirect" => "/Dashboard/index"]
             : ["status" => "error", "message" => "Erreur lors de la mise à jour"];
     }
 
-    public function deleteCircuit($id) // SUPP UN CIRCUIT PAR SON ID
+    public function deleteCircuit($id)
     {
         $circuit = $this->circuitRepository->find($id);
         if (!$circuit) {
@@ -78,17 +82,17 @@ class CircuitService
             : ["status" => "error", "message" => "Erreur lors de la suppression"];
     }
 
-    public function findCircuitById($id) // RECUP UN CIRCUIT PAR SON ID
+    public function findCircuitById($id)
     {
         return $this->circuitRepository->find($id);
     }
 
-    public function getAllCircuits() // RECUP TOUT LES CIRCUITS
+    public function getAllCircuits()
     {
         return $this->circuitRepository->findAll();
     }
 
-    private function handleImageUpload($files, $oldImage = null) // GESTION DE L'UPLOAD D'UNE IMAGE POUR UN CIRCUIT
+    private function handleImageUpload($files, $oldImage = null)
     {
         $uploadDir = "Public/assets/images/";
         if (!isset($files['img']) || $files['img']['error'] !== UPLOAD_ERR_OK) {
