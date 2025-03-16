@@ -1,0 +1,154 @@
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff5733;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+/*CARDS */
+.circuit-card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.circuit-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.circuit-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.circuit-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.circuit-description {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 15px;
+    max-height: 80px; 
+    overflow-y: auto; 
+    padding-right: 5px;
+}
+
+
+.circuit-location {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.circuit-price {
+    font-size: 1.3rem;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.circuit-duration {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* BUTTON */
+.btn-details {
+    background: #ff5733;
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: 0.3s;
+    margin-top: auto;
+}
+
+.btn-details:hover {
+    background: #c70039;
+    color: white;
+}
+
+/* MODAL */
+.modal-content {
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-body img {
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.modal-subtitle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff5733;
+    margin-bottom: 10px;
+}
+
+.modal-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.modal-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-top: 10px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .circuit-card img {
+        height: 200px;
+    }
+
+    .modal-body img {
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .circuit-card {
+        margin-bottom: 20px;
+    }
+    .circuit-card img {
+        height: 180px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .modal-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .modal-description {
+        font-size: 0.9rem;
+    }
+}
