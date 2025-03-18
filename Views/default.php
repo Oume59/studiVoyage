@@ -157,7 +157,6 @@
     </div>
     </footer>
 
-    <script src="/assets/js/<?php if(isset($game)){echo $game;}?>.js"></script>
     <script src="/assets/js/<?php if(isset($script)){echo $script;}?>.js"></script>
     <script src="/assets/js/modal.js"></script>
     <script src="/assets/js/fetchPost.js"></script> <!-- FETCH AUTOMATISÉ -->
