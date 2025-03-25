@@ -12,7 +12,7 @@ class CroisiereRepository extends DbRepository{
     public function search()
 {
     return $this->req(
-        "SELECT c.id, c.jours, c.prix, c.description, c.img, c.duree, d.pays
+        "SELECT c.id, c.prix, c.description, c.img, c.duree, d.pays
          FROM ". $this->table ." c
          JOIN Destinations d ON c.destination_id = d.id"
     )->fetchAll();
@@ -21,7 +21,7 @@ class CroisiereRepository extends DbRepository{
 public function searchById($id)
 {
     return $this->req(
-        "SELECT c.id, c.jours, c.prix, c.description, c.img, c.duree, d.pays
+        "SELECT c.id, c.prix, c.description, c.img, c.duree, d.pays
          FROM ". $this->table ." c
          JOIN Destinations d ON c.destination_id = d.id
          WHERE c.id = ?",
