@@ -10,7 +10,6 @@ $css='circuit';
                     <div class="card circuit-card">
                         <img src="/Public/assets/images/<?= htmlspecialchars($croisiere->img) ?>" class="card-img-top" alt="Image">
                         <div class="card-body text-center">
-                            <h3 class="card-title"><?= htmlspecialchars($croisiere->jours) ?> jours</h3>
                             <p class="circuit-description"><?= htmlspecialchars($croisiere->description) ?></p>
                             <p class="circuit-price"><strong><?= htmlspecialchars($croisiere->prix) ?> €</strong></p>
                             <p class="circuit-duration"><?= htmlspecialchars($croisiere->duree) ?> nuits</p>
