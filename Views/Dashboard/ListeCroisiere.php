@@ -11,7 +11,6 @@
             <?php foreach ($croisieres as $croisiere): ?>
                 <tr>
                     <td><?= htmlspecialchars($croisiere->destination_id) ?></td>
-                    <td><?= htmlspecialchars($croisiere->jours) ?></td>
                     <td><?= htmlspecialchars($croisiere->prix) ?> €</td>
                     <td><?= htmlspecialchars($croisiere->duree) ?> jours</td>
                     <td class="text-truncate" style="max-width: 200px;"> <?= htmlspecialchars($croisiere->description) ?> </td>
