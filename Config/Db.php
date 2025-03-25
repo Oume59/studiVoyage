@@ -8,11 +8,6 @@ class Db extends PDO {
 
     private static $instance;
 
-    /**
-     * Initializes the Db instance.
-     *
-     * Sets up the connection with default fetch mode set to object.
-     */
     private function __construct()
     {
         $dsn = 'mysql:host=' . $_ENV['DB_HOST'] . ';dbname=' . $_ENV['DB_NAME'];
@@ -21,11 +16,6 @@ class Db extends PDO {
         $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
-    /**
-     * Returns the singleton instance of the database connection.
-     *
-     * @return self
-     */
     public static function getInstance(): self 
     {
         if (self::$instance === null) {

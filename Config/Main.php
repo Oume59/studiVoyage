@@ -6,14 +6,8 @@ use App\Controllers\MainController;
 
 class Main
 {
-    /**
-     * Démarre l'application.
-     *
-     * Initialise la session, génère le jeton CSRF, traite l'URL pour déterminer
-     * le bon contrôleur et l'action, et nettoie les données POST entrantes.
-     *
-     * @return void
-     */
+    /*Démarre l'application.
+Initialise la session, génère le jeton CSRF, traite l'URL pour déterminer le bon contrôleur et l'action, et nettoie les données POST entrantes.*/
     public function start()
     {
         session_start();
@@ -62,15 +56,9 @@ class Main
         }
     }
 
-    /**
-     * Vérifie le jeton CSRF pour les requêtes POST.
-     *
-     * Valide le jeton CSRF fourni par rapport à celui stocké dans la session
-     * pour prévenir les attaques CSRF.
-     *
-     * @param string $token Le jeton CSRF à valider.
-     * @return void
-     */
+    /*Vérifie le jeton CSRF pour les requêtes POST.
+    Valide le jeton CSRF fourni par rapport à celui stocké dans la session pour prévenir les attaques CSRF.
+    $token Le jeton CSRF à valider.*/
     public function checkCsrfToken($token)
     {
         if (!isset($_SESSION['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $token)) {
@@ -81,14 +69,11 @@ class Main
         }
     }
 
-    /**
-     * Nettoie les données de formulaire en supprimant les balises HTML tout en conservant les types de données originaux.
-     *
-     * Nettoie toutes les données de formulaire entrantes pour éviter les attaques XSS.
-     *
-     * @param array $data Un tableau contenant les données du formulaire ($_POST ou $_GET).
-     * @return array Tableau des données nettoyées.
-     */
+    /* Nettoie les données de formulaire en supprimant les balises HTML tout en conservant les types de données originaux.
+    // Nettoie toutes les données de formulaire entrantes pour éviter les attaques XSS.
+    // $data Un tableau contenant les données du formulaire ($_POST ou $_GET).
+    Tableau des données nettoyées.*/
+    
     private function sanitizeFormData(array $data)
     {
         $sanitizedData = [];
@@ -109,14 +94,8 @@ class Main
         return $sanitizedData;
     }
 
-    /**
-     * Affiche une page d'erreur 404.
-     *
-     * Envoie un code HTTP 404 et affiche un message d'erreur.
-     *
-     * @param string $message Le message d'erreur à afficher.
-     * @return void
-     */
+     //Envoie un code HTTP 404 et affiche un message d'erreur.
+    
     private function error404($message)
     {
         http_response_code(404);
