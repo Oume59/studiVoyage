@@ -11,11 +11,6 @@
         </div>
 
         <div class="mb-3">
-            <label for="jours" class="form-label">Nombre de jours :</label>
-            <input type="number" class="form-control" name="jours" value="<?= htmlspecialchars($croisiere->jours) ?>" required>
-        </div>
-
-        <div class="mb-3">
             <label for="prix" class="form-label">Prix (€) :</label>
             <input type="number" class="form-control" name="prix" step="0.01" value="<?= htmlspecialchars($croisiere->prix) ?>" required>
         </div>
