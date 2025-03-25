@@ -27,11 +27,12 @@ class LoginService
             exit();
         }
 
+        // Vérification du mot de passe hashé
         if ($user && password_verify($password, $user->password)) {
             $_SESSION['id'] = $user->id;
             $_SESSION['name'] = $user->name;
             $_SESSION['email'] = $user->email;
-            $_SESSION['role'] = $user->role;
+            $_SESSION['id_role'] = $user->id_role;
 
             http_response_code(200);
             echo json_encode(["status" => "success", "redirect" => "Dashboard/index"]);

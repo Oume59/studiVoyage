@@ -22,7 +22,6 @@ class CroisiereService
 
         $croisiereData = [
             'destination_id' => intval($data['destination_id'] ?? 0),
-            'jours' => intval($data['jours'] ?? 0),
             'prix' => floatval($data['prix'] ?? 0),
             'description' => htmlspecialchars($data['description'] ?? ''),
             'img' => $imageName,
@@ -46,7 +45,6 @@ class CroisiereService
 
         $updateData = [
             'destination_id' => intval($data['destination_id']),
-            'jours' => intval($data['jours']),
             'prix' => floatval($data['prix']),
             'description' => htmlspecialchars($data['description']),
             'img' => $imageName,

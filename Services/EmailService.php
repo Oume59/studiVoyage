@@ -27,17 +27,6 @@ class EmailService
         }
     }
 
-    /**
-     * Envoie un email.
-     *
-     * @param string $to L'adresse email du destinataire.
-     * @param string $subject Le sujet de l'email.
-     * @param string $body Le contenu HTML de l'email.
-     * @param string|null $altBody Le contenu texte brut (optionnel).
-     * @param string|null $from L'adresse email de l'expéditeur (par défaut : configurée).
-     * @param string|null $fromName Le nom de l'expéditeur (par défaut : configuré).
-     * @throws \Exception En cas d'erreur d'envoi.
-     */
     public function sendEmail(
         string $to,
         string $subject,
