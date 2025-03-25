@@ -3,19 +3,23 @@
 namespace App\Controllers;
 
 use App\Services\CroisiereService;
+use App\Repository\DestinationRepository;
 
 class DashCroisiereController extends Controller
 {
     private $croisiereService;
+    private $destinationRepository;
 
     public function __construct()
     {
         $this->croisiereService = new CroisiereService();
+        $this->destinationRepository = new DestinationRepository();
     }
 
     public function index()
     {
-        $this->render("Dashboard/AjoutCroisiere");
+        $destinations = $this->destinationRepository->findAll();
+        $this->render("Dashboard/AjoutCroisiere", ['destinations' => $destinations]);
     }
 
     public function ajoutCroisiere()
