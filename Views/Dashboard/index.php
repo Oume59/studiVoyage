@@ -6,7 +6,7 @@ $css='dashboard';
     <div class="container-fluid admin-container">
         <h2>Dashboard Admin</h2>
         <div class="dashboard-container">
-            <?php if (isset($_SESSION['id']) && ($_SESSION['role'] === 'Admin')): ?>
+            <?php if (isset($_SESSION['id']) && isset($_SESSION['id_role']) && $_SESSION['id_role'] == 1): ?>
 
                 <div class="admin-link-container">
                     <a href="/DashSejour" class="admin-link">Ajouter Séjour</a>
@@ -23,10 +23,10 @@ $css='dashboard';
                 </div>
 
                 <div class="admin-link-container">
-                    <a href="/DashCroisieres" class="admin-link">Ajouter Croisière</a>
+                    <a href="/DashCroisiere" class="admin-link">Ajouter Croisière</a>
                 </div>
                 <div class="admin-link-container">
-                    <a href="/DashCroisieres/liste" class="admin-link">Liste Croisières</a>
+                    <a href="/DashCroisiere/liste" class="admin-link">Liste Croisières</a>
                 </div>
 
                 <div class="admin-link-container">
@@ -46,7 +46,7 @@ $css='dashboard';
 
             <?php endif; ?>
 
-            <?php if (isset($_SESSION['id']) && $_SESSION['role'] === 'Admin'): ?>
+            <?php if (isset($_SESSION['id']) && isset($_SESSION['id_role']) && $_SESSION['id_role'] == 1): ?>
                 <div class="admin-link-container">
                     <a href="/DashUser" class="admin-link">Ajouter Utilisateur</a>
                 </div>
