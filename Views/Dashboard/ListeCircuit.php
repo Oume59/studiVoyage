@@ -17,20 +17,22 @@
             <tbody>
                 <?php foreach ($circuits as $circuit): ?>
                     <tr>
-                        <td><?= htmlspecialchars($circuit->pays) ?></td>
-                        <td><?= htmlspecialchars($circuit->ville) ?></td>
-                        <td><?= htmlspecialchars($circuit->prix) ?> €</td>
-                        <td><?= htmlspecialchars($circuit->duree) ?> jours</td>
-                        <td class="text-truncate" style="max-width: 200px;"><?= htmlspecialchars($circuit->description) ?></td>
-                        <td>
+                    <td class="text-center align-middle"><?= htmlspecialchars($circuit->pays) ?></td>
+                    <td class="text-center align-middle"><?= htmlspecialchars($circuit->ville) ?></td>
+                    <td class="text-center align-middle"><?= htmlspecialchars($circuit->prix) ?> €</td>
+                    <td class="text-center align-middle"><?= htmlspecialchars($circuit->duree) ?> jours</td>
+                        <td class="text-wrap text-break w-25">
+                            <?= htmlspecialchars($circuit->description) ?>
+                        </td>
+                        <td class="text-center align-middle">
                             <?php if (!empty($circuit->img)): ?>
-                                <img src="/Public/assets/images/<?= htmlspecialchars($circuit->img) ?>" width="100" height="80" class="rounded shadow-sm" alt="Image circuit">
+                                <img src="/Public/assets/images/<?= htmlspecialchars($circuit->img) ?>" width="100" height="80" class="rounded shadow-sm mx-auto d-block" alt="Image circuit">
                             <?php else: ?>
                                 <span class="text-muted">Aucune image</span>
                             <?php endif; ?>
                         </td>
-                        <td class="text-center">
-                            <div class="d-flex flex-column gap-2">
+                        <td class="text-center align-middle">
+                            <div class="d-flex flex-column gap-2 align-items-center">
 
                                 <a href="/DashCircuit/updateCircuit/<?= htmlspecialchars($circuit->id) ?>" class="btn btn-warning btn-sm w-100">
                                     <i class="fas fa-edit"></i> Modifier

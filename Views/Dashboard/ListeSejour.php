@@ -17,11 +17,11 @@
             <tbody>
                 <?php foreach ($sejours as $sejour): ?>
                     <tr>
-                        <td><?= htmlspecialchars($sejour->pays) ?></td>
-                        <td><?= htmlspecialchars($sejour->ville) ?></td>
-                        <td><?= htmlspecialchars($sejour->prix) ?> €</td>
-                        <td><?= htmlspecialchars($sejour->duree) ?> jours</td>
-                        <td class="text-truncate" style="max-width: 200px;"><?= htmlspecialchars($sejour->description) ?></td>
+                    <td class="text-center align-middle"><?= htmlspecialchars($sejour->pays) ?></td>
+                    <td class="text-center align-middle"><?= htmlspecialchars($sejour->ville) ?></td>
+                    <td class="text-center align-middle"><?= htmlspecialchars($sejour->prix) ?> €</td>
+                    <td class="text-center align-middle"><?= htmlspecialchars($sejour->duree) ?> jours</td>
+                        <td class="text-wrap text-break w-25"> <?= htmlspecialchars($sejour->description) ?></td>
                         <td>
                             <?php if (!empty($sejour->img)): ?>
                                 <img src="/Public/assets/images/<?= htmlspecialchars($sejour->img) ?>" width="100" height="80" class="rounded shadow-sm" alt="Image séjour">
@@ -29,9 +29,8 @@
                                 <span class="text-muted">Aucune image</span>
                             <?php endif; ?>
                         </td>
-                        <td class="text-center">
-                            <div class="d-flex flex-column gap-2">
-                              
+                        <td class="text-center align-middle">
+                            <div class="d-flex flex-column gap-2">                           
                                 <a href="/DashSejour/updateSejour/<?= htmlspecialchars($sejour->id) ?>" class="btn btn-warning btn-sm w-100">
                                     <i class="fas fa-edit"></i> Modifier
                                 </a>

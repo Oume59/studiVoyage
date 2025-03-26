@@ -1,5 +1,5 @@
 <?php 
-$css = 'dashsejour'; // Pas besoin de dashcroisiere si c’est la même mise en page
+$css = 'dashsejour';
 ?>
 
 

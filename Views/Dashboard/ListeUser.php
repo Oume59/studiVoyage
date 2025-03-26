@@ -19,7 +19,7 @@
                         <td><?= htmlspecialchars($user->id_role) ?></td>
                         <td class="text-center">
                             <div class="d-flex justify-content-center">
-                                <?php if (isset($_SESSION['id']) && $_SESSION['role'] === 'Admin'): ?>
+                                <?php if (isset($_SESSION['id']) && isset($_SESSION['id_role']) && $_SESSION['id_role'] == 1):?>
 
                                     <form action="/DashUser/deleteUser" method="POST" class="d-inline" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">
                                         <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
