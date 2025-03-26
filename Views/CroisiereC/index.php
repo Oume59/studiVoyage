@@ -3,7 +3,7 @@ $css='circuit';
 ?>
 <section class="container mt-5">
     <h1 class="text-center py-4 section-title">Croisières dans les Caraïbes</h1>
-    <div class="row">
+    <div class="row justify-content-center">
         <?php foreach ($croisieres as $croisiere): ?>
             <?php if ($croisiere->type === 'C'): ?>
                 <div class="col-lg-4 col-md-6 mb-4">
