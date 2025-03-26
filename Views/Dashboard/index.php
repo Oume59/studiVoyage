@@ -30,14 +30,14 @@ $css='dashboard';
                 </div>
 
                 <div class="admin-link-container">
-                    <a href="/DashDerniereMinute" class="admin-link">Dernières Minutes</a>
+                    <a href="/DashDerniereMinute" class="admin-link">Ajouter Dernière Minute</a>
                 </div>
                 <div class="admin-link-container">
                     <a href="/DashDerniereMinute/liste" class="admin-link">Liste Dernières Minutes</a>
                 </div>
 
                 <div class="admin-link-container">
-                    <a href="/DashPromotion" class="admin-link">Promotions</a>
+                    <a href="/DashPromotion" class="admin-link">Ajouter Promotion</a>
                 </div>
 
                 <div class="admin-link-container">
