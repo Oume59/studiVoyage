@@ -1,5 +1,5 @@
 
-.racing-form-section {
+.user-form-section {
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -8,7 +8,7 @@
 }
 
 
-.racing-form-container {
+.user-form-container {
     background: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 15px;
@@ -19,12 +19,12 @@
     transition: transform 0.3s ease-in-out;
 }
 
-.racing-form-container:hover {
+.user-form-container:hover {
     transform: scale(1.02);
 }
 
 
-.racing-title {
+.user-title {
     font-size: 2rem;
     font-weight: bold;
     color: #ff5733;
@@ -34,7 +34,7 @@
 }
 
 
-.racing-input {
+.user-input {
     border-radius: 8px;
     padding: 10px;
     font-size: 1rem;
@@ -42,14 +42,14 @@
     transition: border-color 0.3s ease;
 }
 
-.racing-input:focus {
+.user-input:focus {
     border-color: #ff5733;
     outline: none;
     box-shadow: 0 0 8px rgba(255, 87, 51, 0.5);
 }
 
 
-.racing-btn {
+.user-btn {
     background: #ff5733;
     color: white;
     font-weight: bold;
@@ -62,7 +62,7 @@
     margin: 15px auto;
 }
 
-.racing-btn:hover {
+.user-btn:hover {
     background: #c70039;
     transform: scale(1.05);
 }
