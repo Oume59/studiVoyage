@@ -3,7 +3,7 @@ $css='circuit';
 ?>
 <section class="container mt-5">
     <h1 class="text-center py-4 section-title">🌎 Nos Circuits à Découvrir</h1>
-    <div class="row">
+    <div class="row justify-content-center">
         <?php foreach ($circuits as $circuit): ?>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card circuit-card">
