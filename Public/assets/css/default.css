@@ -117,3 +117,9 @@ main {
 .modal-body {
     color: white;
 }
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
