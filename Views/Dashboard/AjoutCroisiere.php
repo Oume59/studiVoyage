@@ -60,8 +60,8 @@ $css = 'dashsejour';
         <div id="success-message" class="alert alert-success d-none" role="alert"></div>
     </div>
 
-    <!-- BUTTON RETURN -->
-    <div class="text-end mt-3">
-        <a href="/Dashboard" class="btn btn-secondary">Retour</a>
-    </div>
+<!-- BUTTON RETURN -->
+<div class="d-flex justify-content-center mb-4">
+    <a href="/Dashboard" class="btn btn-secondary">Retour</a>
+</div>
 </div>
