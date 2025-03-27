@@ -4,13 +4,8 @@ namespace App;
 
 class Autoloader 
 {
-    /**
-     * Register the autoload function queue
-     *
-     * Registers the Composer autoloader and adds the custom autoloader function.
-     *
-     * @return void
-     */
+  // Enregistrer la fonction d'autoloading + Enregistre l'autoloader de Composer et ajoute la fonction d'autoloader personnalisée.
+    
     static function register()
     {
         // Register Composer's autoload
@@ -23,32 +18,25 @@ class Autoloader
         ]);
     }
 
-    /**
-     * Custom autoloader function
-     *
-     * Automatically loads the class file when a class is instantiated.
-     *
-     * @param string $class The fully qualified name of the class to load.
-     * @return void
-     */
+   // Charge automatiquement le fichier de la classe lorsqu'une classe est instanciée.
     static function Autoload($class)
     {
-        // Only autoload classes from the current namespace
+        // Charger automatiquement les classes du namespace actuel
         if (strpos($class, __NAMESPACE__) === 0) {
-            // Remove the 'App\' prefix from the class name
+            // Supprimer le préfixe 'App\' du nom de la classe
             $class = str_replace(__NAMESPACE__ . '\\', '', $class);
             
-            // Replace namespace separators with directory separators
+             // Remplacer les séparateurs de namespace par des séparateurs de répertoires
             $class = str_replace('\\', '/', $class);
 
-            // Build the full path to the class file
+             // Construire le chemin complet du fichier de la classe
             $file = __DIR__ . '/' . $class . '.php';
 
-            // Import the file if it exists
+             // Importer le fichier si il existe
             if (file_exists($file)) {
                 require_once $file;
             } else {
-                // Log an error if the file doesn't exist
+                // Enregistrer une erreur si le fichier n'existe pas
                 error_log("Autoloader error: Unable to load file: $file");
             }
         }
