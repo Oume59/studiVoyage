@@ -60,7 +60,7 @@
     </div>
 
     <!-- BUTTON RETURN -->
-    <div class="text-end">
+    <div class="text-end mb-4">
         <a href="/Dashboard" class="btn btn-secondary">Retour</a>
     </div>
 </div>
