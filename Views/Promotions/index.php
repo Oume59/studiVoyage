@@ -1,5 +1,5 @@
 <?php
-$css = 'croisiere';
+$css = 'promotion';
 ?>
 
 <div class="container mt-5">
@@ -7,7 +7,8 @@ $css = 'croisiere';
     <div class="row justify-content-center">
         <?php foreach ($promotions as $promotion): ?>
             <div class="col-lg-4 col-md-6 d-flex">
-                <div class="card sejour-card shadow-sm border-warning w-100">
+                <div class="card sejour-card promo-wrapper shadow-sm border-warning w-100">
+                    <div class="promo-ribbon">PROMO</div>
                     <img src="/Public/assets/images/<?= htmlspecialchars($promotion->img) ?>" class="card-img-top" alt="<?= htmlspecialchars($promotion->ville) ?>">
                     <div class="card-body d-flex flex-column text-center">
                         <h3 class="card-title text-warning"><?= htmlspecialchars($promotion->ville) ?></h3>
@@ -50,3 +51,4 @@ $css = 'croisiere';
         <?php endforeach; ?>
     </div>
 </div>
+<div class="mb-5"></div>

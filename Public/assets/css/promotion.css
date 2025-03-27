@@ -1,0 +1,86 @@
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .circuit-card img {
+        height: 200px;
+    }
+
+    .modal-body img {
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .circuit-card {
+        margin-bottom: 20px;
+    }
+    .circuit-card img {
+        height: 180px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .modal-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .modal-description {
+        font-size: 0.9rem;
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff5733;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+.container {
+    margin-bottom: 5rem;
+}
+
+/*  RUBAN DES PROMOS */
+.promo-ribbon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ffc107;
+    color: #000;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-bottom-right-radius: 10px;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* CONTAINER POUR LE RUBAN  */
+.card.promo-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+/*  HOVER */
+.card.promo-wrapper:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+.card.promo-wrapper img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card.promo-wrapper:hover img {
+    transform: scale(1.05);
+}
+
