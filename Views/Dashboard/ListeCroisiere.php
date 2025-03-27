@@ -34,5 +34,9 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-    <a href="/Dashboard" class="btn btn-secondary mt-3">Retour</a>
+        <!-- BUTTON RETURN -->
+        <div class="text-end mb-4">
+        <a href="/Dashboard" class="btn btn-secondary">Retour</a>
+    </div>
+</div>
 </div>
