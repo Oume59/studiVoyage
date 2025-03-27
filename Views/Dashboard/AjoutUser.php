@@ -1,5 +1,5 @@
 <?php
-$css = "user";
+$css = 'user'; 
 ?>
 
 <section class="text-center d-flex justify-content-center align-items-center user-form-section">
@@ -34,4 +34,11 @@ $css = "user";
             <div id="success-message" class="alert alert-success d-none" role="alert"></div>
         </div>
     </div>
+    
 </section>
+
+<!-- BUTTON RETURN -->
+<div class="d-flex justify-content-center mb-4">
+    <a href="/Dashboard" class="btn btn-secondary">Retour</a>
+</div>
+</div>
