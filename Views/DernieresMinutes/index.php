@@ -1,8 +1,8 @@
 <?php
-$css='promotion';
+$css='derniereMinute';
 ?>
 
-<section class="container mt-5">
+<section class="container mt-5 dernieres-minutes">
     <h1 class="text-center py-4 text-danger">Nos Offres Dernières Minutes</h1>
     <div class="row justify-content-center">
         <?php foreach ($offres as $offre): ?>
