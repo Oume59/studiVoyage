@@ -1,0 +1,57 @@
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .circuit-card img {
+        height: 200px;
+    }
+
+    .modal-body img {
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .circuit-card {
+        margin-bottom: 20px;
+    }
+    .circuit-card img {
+        height: 180px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .modal-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .modal-description {
+        font-size: 0.9rem;
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff5733;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+.dernieres-minutes .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dernieres-minutes .card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.dernieres-minutes .card-body {
+    transition: background-color 0.3s ease;
+}
+
+.dernieres-minutes .card:hover .card-body {
+    background-color: #f8f9fa; 
+}
