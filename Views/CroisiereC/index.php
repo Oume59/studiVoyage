@@ -21,3 +21,8 @@ $css='circuit';
         <?php endforeach; ?>
     </div>
 </section>
+
+<!-- BUTTON RETURN -->
+<div class="d-flex justify-content-center mb-4">
+    <a href="/Croisiere" class="btn btn-primary">Retour</a>
+</div>
