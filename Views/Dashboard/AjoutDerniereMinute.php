@@ -43,3 +43,9 @@ $css = 'dashsejour';
         </div>
     </form>
 </div>
+
+<!-- BUTTON RETURN -->
+<div class="d-flex justify-content-center mt-4 mb-4">
+    <a href="/Dashboard" class="btn btn-secondary">Retour</a>
+</div>
+</div>
