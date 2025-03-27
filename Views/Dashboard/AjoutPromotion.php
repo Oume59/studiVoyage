@@ -48,6 +48,8 @@ $css = 'dashsejour';
     </div>
 </div>
 
-<div class="text-end mt-3">
+<!-- BUTTON RETURN -->
+<div class="d-flex justify-content-center mb-4">
     <a href="/Dashboard" class="btn btn-secondary">Retour</a>
+</div>
 </div>
