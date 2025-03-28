@@ -4,13 +4,12 @@ namespace App\Services;
 
 use App\Models\UserModel;
 use App\Repository\UserRepository;
+use App\Services\EmailService;
 
 class RegisterService
 {
     public function register($data)
     {
-        header('Content-Type: application/json');
-    
         if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
             http_response_code(400);
             echo json_encode(["status" => "error", "message" => "Email invalide."]);
@@ -39,19 +38,12 @@ class RegisterService
         // Hydrater et enregistrer l'utilisateur avec le token
         $UsersModel = new UserModel();
         $UsersModel->hydrate($data);
-        if ($UsersModel = (new UserRepository())->create($data)) {
+        if ($UsersModel) {
+            $userRepository = new UserRepository();
+            $userRepository->create($data);
             // Envoi de l'email de confirmation
-            $emailService = new EmailService();
-            $subject = "Confirmation de votre inscription";
-            $confirmationLink = "http://localhost:8085/register/confirm/" . $token;
-            $body = "Bonjour,<br>
-                    <br>
-                    Merci pour votre inscription.<br>
-                    Veuillez cliquer sur le lien ci-dessous pour confirmer votre adresse email :<br>
-                    <br>
-                    <a href='$confirmationLink'>Confirmer mon email</a>";
     
-            if ($emailService->sendEmail($data['email'], $subject, $body)) {
+            if ($this->sendConfirmationEmail($data['email'], $token)) {
                 http_response_code(200);
                 echo json_encode(["status" => "success", "message" => "Un email de confirmation a été envoyé."]);
                 exit();
