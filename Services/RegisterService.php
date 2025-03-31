@@ -10,6 +10,8 @@ class RegisterService
 {
     public function register($data)
     {
+        header('Content-Type: application/json');
+        
         if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
             http_response_code(400);
             echo json_encode(["status" => "error", "message" => "Email invalide."]);
@@ -38,20 +40,13 @@ class RegisterService
         // Hydrater et enregistrer l'utilisateur avec le token
         $UsersModel = new UserModel();
         $UsersModel->hydrate($data);
-        if ($UsersModel) {
-            $userRepository = new UserRepository();
-            $userRepository->create($data);
+        if ($UsersModel = (new UserRepository())->create($data)) {
             // Envoi de l'email de confirmation
-    
-            if ($this->sendConfirmationEmail($data['email'], $token)) {
-                http_response_code(200);
-                echo json_encode(["status" => "success", "message" => "Un email de confirmation a été envoyé."]);
-                exit();
-            } else {
-                http_response_code(500);
-                echo json_encode(["status" => "error", "message" => "Erreur lors de l'envoi de l'email."]);
-                exit();
-            }
+            $this->sendConfirmationEmail($data['email'], $token);
+
+            http_response_code(200);
+            echo json_encode(["status" => "success", "message" => "Un email de confirmation a été envoyé."]);
+            exit();
         } else {
             http_response_code(500);
             echo json_encode(["status" => "error", "message" => "Erreur lors de la création de l'utilisateur."]);
