@@ -11,6 +11,7 @@ class EmailService
     public function __construct()
     {
         $this->mailer = new PHPMailer(true);
+
         try {
             // Configuration SMTP
             $this->mailer->isSMTP();
