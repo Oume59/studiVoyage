@@ -24,7 +24,7 @@ $css = 'user';
             </div>
             <div class="formLogin">
                 <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
-                <button type="submit" id="submit" class="btn user-btn w-75"> S'inscrire</button>
+                <button type="submit" id="submit" class="btn user-btn w-75"> Inscription</button>
             </div>
                     <!-- Messages d'alerte -->
         <div>
