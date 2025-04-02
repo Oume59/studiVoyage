@@ -6,7 +6,7 @@ $css='dashboard';
     <div class="container-fluid admin-container">
         <h2>Dashboard Admin</h2>
         <div class="dashboard-container">
-            <?php if (isset($_SESSION['id']) && isset($_SESSION['id_role']) && $_SESSION['id_role'] == 1): ?>
+            <?php if (isset($_SESSION['id']) && isset($_SESSION['id_role']) && ($_SESSION['id_role'] == 1 || $_SESSION['id_role'] == 2)): ?>
 
                 <div class="admin-link-container">
                     <a href="/DashSejour" class="admin-link">Ajouter Séjour</a>
