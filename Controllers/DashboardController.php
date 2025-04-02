@@ -6,12 +6,12 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        if (isset($_SESSION['id']) && isset($_SESSION['id_role']) && $_SESSION['id_role'] == 1) {
+     // Autoriser les users avec le rôle 1 (Admin) ou le rôle 2 (User) à accéder au dash
+    if (isset($_SESSION['id']) && isset($_SESSION['id_role']) && ($_SESSION['id_role'] == 1 || $_SESSION['id_role'] == 2)) {
         $this->render('Dashboard/index');
-    }else {
+        } else {
         http_response_code(404);
-        echo "la page recherchée n'existe pas";
+        echo "La page recherchée n'existe pas";
     }
 }
-
 }
